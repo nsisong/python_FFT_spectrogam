@@ -1,0 +1,24 @@
+import matplotlib.pyplot as plt
+import numpy as np
+
+time = 0.125
+total_fft_val = 2048
+freq_amp = 104.76
+
+def plot():
+    # Creating dataset
+    x = np.linspace(0, freq_amp, total_fft_val)
+    y = np.loadtxt('example_data.csv', unpack = True, delimiter = ',')
+
+    plt.figure(figsize =(14, 9))
+    plt.plot(x, y)
+    
+
+    # naming the y axis
+    plt.xlabel('freq')
+    plt.ylabel('FFT Val')
+
+    # show plot
+    plt.show()
+
+plot()

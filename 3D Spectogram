@@ -1,0 +1,35 @@
+# Import libraries
+from matplotlib import mlab
+import numpy as np
+import matplotlib.pyplot as plt
+
+time = 0.125
+total_fft_val = 2048
+freq_amp = 104.76
+# Creating dataset
+# x = np.outer(np.linspace(-3, 3, 32), np.ones(32))
+
+x = np.arange(0, 256, 0.125).reshape(2, 1024)
+y = np.linspace(0, freq_amp, total_fft_val).reshape(2, 1024)
+z = np.loadtxt('example_data.csv', unpack = True, delimiter = ',').reshape(2, 1024)
+
+
+
+print(len(x))
+
+# Creating figure
+# fig = plt.figure(figsize =(14, 9))
+ax = plt.axes(projection ='3d')
+
+# Creating plot
+ax.plot_surface(x, y, z)
+
+
+ax.set_xlabel('time (s)')
+ax.set_ylabel('frequencies (Hz)')
+
+ax.set_zlabel('val')
+# ax.set_zlim(-140, 0)
+
+# show plot
+plt.show()
