@@ -11,13 +11,14 @@ def plot():
     y = np.loadtxt('example_data.csv', unpack = True, delimiter = ',')
 
     plt.figure(figsize =(14, 9))
-    plt.plot(x, y)
+    plt.specgram(y)
+    plt.colorbar(use_gridspec=True)
     
 
     # naming the y axis
     plt.xlabel('FREQ')
     plt.ylabel('FFT Val')
-    plt.title('X and Y plot') 
+    plt.title('2D Spectrogram') 
 
     # show plot
     plt.show()

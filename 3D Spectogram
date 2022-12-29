@@ -18,11 +18,12 @@ z = np.loadtxt('example_data.csv', unpack = True, delimiter = ',').reshape(2, 10
 print(len(x))
 
 # Creating figure
-# fig = plt.figure(figsize =(14, 9))
+fig = plt.figure(figsize =(14, 9))
 ax = plt.axes(projection ='3d')
 
+
 # Creating plot
-ax.plot_surface(x, y, z)
+ax.plot_surface(x, y, z, cmap='plasma')
 
 
 ax.set_xlabel('time (s)')
